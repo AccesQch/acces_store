@@ -1,0 +1,225 @@
+!DOCTYPE html
+html lang=az
+head
+    meta charset=UTF-8
+    meta name=viewport content=width=device-width, initial-scale=1.0
+    titleAccesQCH  Premium Digital Giftstitle
+    script src=httpscdnjs.cloudflare.comajaxlibsfont-awesome6.4.0jsall.min.jsscript
+    style
+        root {
+            --primary #ff3333;
+            --secondary #1a1a1a;
+            --accent #00d4ff;
+            --glass rgba(255, 255, 255, 0.05);
+        }
+
+        body {
+            background radial-gradient(circle at top, #1a1a2e 0%, #0f0f0f 100%);
+            color white;
+            font-family 'Poppins', sans-serif;
+            margin 0;
+            padding 20px;
+            display flex;
+            flex-direction column;
+            align-items center;
+            min-height 100vh;
+        }
+
+        .header {
+            text-align center;
+            margin-bottom 40px;
+            animation fadeInDown 0.8s ease;
+        }
+
+        .header h1 {
+            font-size 32px;
+            letter-spacing 4px;
+            margin-bottom 5px;
+            background linear-gradient(to right, #ff3333, #ff8080);
+            -webkit-background-clip text;
+            -webkit-text-fill-color transparent;
+        }
+
+        .menu-container {
+            width 100%;
+            max-width 450px;
+            display grid;
+            gap 20px;
+        }
+
+        .card {
+            background var(--glass);
+            backdrop-filter blur(10px);
+            border 1px solid rgba(255, 255, 255, 0.1);
+            border-radius 20px;
+            padding 20px;
+            display flex;
+            align-items center;
+            cursor pointer;
+            transition all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .cardhover {
+            transform scale(1.05);
+            background rgba(255, 255, 255, 0.1);
+            border-color var(--primary);
+        }
+
+        .card-icon {
+            font-size 28px;
+            color var(--primary);
+            margin-right 20px;
+            filter drop-shadow(0 0 5px var(--primary));
+        }
+
+        .card-text h3 { margin 0; font-size 18px; }
+        .card-text p { margin 5px 0 0; font-size 13px; opacity 0.6; }
+
+         Modal (Məlumat Pəncərəsi) 
+        .modal {
+            display none;
+            position fixed;
+            top 0; left 0; width 100%; height 100%;
+            background rgba(0, 0, 0, 0.9);
+            z-index 1000;
+            justify-content center;
+            align-items center;
+            backdrop-filter blur(5px);
+        }
+
+        .modal-content {
+            background #1a1a1a;
+            width 85%;
+            max-width 400px;
+            padding 30px;
+            border-radius 25px;
+            border 1px solid var(--primary);
+            text-align center;
+            position relative;
+            animation zoomIn 0.3s ease;
+        }
+
+        .modal-content h2 { color var(--primary); margin-top 0; }
+        .modal-content p { line-height 1.6; opacity 0.9; margin-bottom 25px; }
+
+        .btn-order {
+            background var(--primary);
+            color white;
+            padding 12px 30px;
+            border-radius 50px;
+            text-decoration none;
+            font-weight bold;
+            display inline-block;
+            transition 0.3s;
+        }
+
+        .btn-orderhover { box-shadow 0 0 20px var(--primary); }
+
+        .close-btn {
+            position absolute;
+            top 15px; right 15px;
+            font-size 20px; cursor pointer; opacity 0.5;
+        }
+
+        @keyframes fadeInDown { from { opacity 0; transform translateY(-20px); } to { opacity 1; transform translateY(0); } }
+        @keyframes zoomIn { from { transform scale(0.8); } to { transform scale(1); } }
+    style
+head
+body
+
+    div class=header
+        h1ACCESQCHh1
+        pPremium Rəqəmsal Hədiyyə Mağazasıp
+    div
+
+    div class=menu-container
+        !-- Love Quest --
+        div class=card onclick=openModal('lovequest')
+            i class=fas fa-heart card-iconi
+            div class=card-text
+                h3Love Quest Oyunuh3
+                pSizin sevgi hekayənizə özəl mini oyun.p
+            div
+        div
+
+        !-- Zaman Tuneli --
+        div class=card onclick=openModal('timeline')
+            i class=fas fa-infinity card-iconi
+            div class=card-text
+                h3Zaman Tunelih3
+                pXatirələrin animasiyalı tarixçəsi.p
+            div
+        div
+
+        !-- Sevgiliyə Sayt --
+        div class=card onclick=openModal('couplesite')
+            i class=fas fa-magic card-iconi
+            div class=card-text
+                h3Xüsusi Təbrik Saytıh3
+                pOna özəl URL və musiqili sürpriz.p
+            div
+        div
+
+        !-- Secret Quiz --
+        div class=card onclick=openModal('quiz')
+            i class=fas fa-fire card-iconi
+            div class=card-text
+                h3Secret Quizh3
+                pMünasibətinizi test edən əyləncə.p
+            div
+        div
+    div
+
+    !-- Modal Yapısı --
+    div id=infoModal class=modal
+        div class=modal-content
+            span class=close-btn onclick=closeModal()&times;span
+            h2 id=modalTitleXidmət Adıh2
+            p id=modalDescBura məlumat gələcək.p
+            a href=# id=orderBtn class=btn-orderWhatsApp ilə Sifariş Eta
+        div
+    div
+
+    script
+        const services = {
+            'lovequest' {
+                title Love Quest Oyunu,
+                desc Bu, sevgiliniz üçün hazırlanan xüsusi bir mobil oyundur. O, maneələri keçdikcə sizin mesajlarınızı və fotolarınızı tapır. Sonda isə böyük bir sürpriz mesaj açılır!,
+                wa Salam! 'Love Quest' oyunu sifariş vermək istəyirəm.
+            },
+            'timeline' {
+                title Zaman Tuneli,
+                desc Tanış olduğunuz gündən bu günə qədər olan ən gözəl anlarınızı bir sayt daxilində animasiya ilə canlandırırıq. Hər ilə və ya aya özəl xatirələr!,
+                wa Salam! 'Zaman Tuneli' haqqında məlumat alaq.
+            },
+            'couplesite' {
+                title Xüsusi Təbrik Saytı,
+                desc Sevgiliniz üçün tamamilə ona aid bir sayt (məs sevgilim.comadiniz). İçində musiqi, sizin videolarınız və heç vaxt silinməyəcək rəqəmsal məktub yer alır.,
+                wa Salam! Sevgiliyə özəl sayt sifariş etmək istəyirəm.
+            },
+            'quiz' {
+                title Secret Quiz,
+                desc Bir-birinizi nə qədər tanıyırsınız Sizin üçün hazırladığımız özəl suallara cavab verirsiniz və sonda kimin daha çox sevdiyi 'elmi' sübut olunur!,
+                wa Salam! 'Secret Quiz' sifariş etmək istəyirəm.
+            }
+        };
+
+        function openModal(id) {
+            const s = services[id];
+            document.getElementById('modalTitle').innerText = s.title;
+            document.getElementById('modalDesc').innerText = s.desc;
+            document.getElementById('orderBtn').href = httpswa.me994998461606text= + encodeURIComponent(s.wa);
+            document.getElementById('infoModal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('infoModal').style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            if (event.target == document.getElementById('infoModal')) closeModal();
+        }
+    script
+
+body
+html
