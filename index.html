@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AccesQCH | Premium Digital Love Gifts</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #ff2e2e;
+            --bg: #050505;
+            --card-bg: rgba(20, 20, 20, 0.8);
+            --border: rgba(255, 46, 46, 0.3);
+        }
+
+        body {
+            background-color: var(--bg);
+            background-image: radial-gradient(circle at 50% -20%, #220000 0%, #050505 80%);
+            color: #fff;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            margin-top: 20px;
+        }
+
+        .header h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 35px;
+            letter-spacing: 6px;
+            margin: 0;
+            background: linear-gradient(to right, #ff2e2e, #ff8a8a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-transform: uppercase;
+        }
+
+        .header p {
+            font-size: 14px;
+            letter-spacing: 2px;
+            opacity: 0.6;
+            margin-top: 10px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 450px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 18px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 0 20px rgba(255, 46, 46, 0.2);
+            transform: translateX(5px);
+        }
+
+        .card::after {
+            content: '';
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 8px;
+            height: 8px;
+            border-top: 2px solid var(--primary);
+            border-right: 2px solid var(--primary);
+            transform: translateY(-50%) rotate(45deg);
+            opacity: 0.5;
+        }
+
+        .card-icon {
+            font-size: 26px;
+            color: var(--primary);
+            margin-right: 20px;
+            min-width: 40px;
+            text-align: center;
+        }
+
+        .card-info h3 {
+            margin: 0;
+            font-size: 17px;
+            font-weight: 600;
+        }
+
+        .card-info p {
+            margin: 4px 0 0;
+            font-size: 12px;
+            opacity: 0.5;
+        }
+
+        /* Modal / Information Box */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.95);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(8px);
+        }
+
+        .modal-content {
+            background: #111;
+            width: 85%;
+            max-width: 380px;
+            padding: 30px;
+            border-radius: 24px;
+            border: 1px solid var(--primary);
+            text-align: center;
+            animation: slideUp 0.4s ease;
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .modal-content h2 {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--primary);
+            margin-top: 0;
+            font-size: 22px;
+        }
+
+        .modal-content p {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #ddd;
+            margin-bottom: 25px;
+        }
+
+        .btn-wa {
+            background: var(--primary);
+            color: #fff;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-weight: 600;
+            display: block;
+            transition: 0.3s;
+            box-shadow: 0 4px 15px rgba(255, 46, 46, 0.4);
+        }
+
+        .btn-wa:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(255, 46, 46, 0.6);
+        }
+
+        .close-btn {
+            margin-top: 15px;
+            display: inline-block;
+            font-size: 13px;
+            color: #777;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        .footer {
+            margin-top: 50px;
+            font-size: 11px;
+            opacity: 0.3;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>ACCESQCH</h1>
+        <p>DIGITAL CREATIVE STUDIO</p>
+    </div>
+
+    <div class="container">
+        <!-- Love Quest -->
+        <div class="card" onclick="showInfo('lovequest')">
+            <i class="fas fa-heartbeat card-icon"></i>
+            <div class="card-info">
+                <h3>Love Quest Oyunu</h3>
+                <p>Ona özəl hazırlanmış rəqəmsal macəra.</p>
+            </div>
+        </div>
+
+        <!-- Sevgiliye Sayt -->
+        <div class="card" onclick="showInfo('couplesite')">
+            <i class="fas fa-crown card-icon"></i>
+            <div class="card-info">
+                <h3>Premium Sevgili Saytı</h3>
+                <p>Onun üçün dünyada tək olan özəl URL.</p>
+            </div>
+        </div>
+
+        <!-- Zaman Tuneli -->
+        <div class="card" onclick="showInfo('timeline')">
+            <i class="fas fa-hourglass-half card-icon"></i>
+            <div class="card-info">
+                <h3>Zaman Tuneli</h3>
+                <p>Xatirələrinizdən ibarət rəqəmsal tarixçə.</p>
+            </div>
+        </div>
+
+        <!-- Secret Quiz -->
+        <div class="card" onclick="showInfo('quiz')">
+            <i class="fas fa-lightbulb card-icon"></i>
+            <div class="card-info">
+                <h3>Secret Quiz</h3>
+                <p>Bir-birinizi nə qədər tanıyırsınız?</p>
+            </div>
+        </div>
+
+        <!-- Spotify Vinyl -->
+        <div class="card" onclick="showInfo('vinyl')">
+            <i class="fas fa-compact-disc card-icon"></i>
+            <div class="card-info">
+                <h3>Spotify Vinil Saytı</h3>
+                <p>Mahnınızın rəqəmsal musiqi pleyeri.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">© 2026 ACCESQCH BY ELNUR</div>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <h2 id="m-title">Xidmət Adı</h2>
+            <p id="m-desc">Məlumat yüklənir...</p>
+            <a href="#" id="m-link" class="btn-wa">WhatsApp İlə Sifariş Et</a>
+            <div class="close-btn" onclick="hideInfo()">Bağla</div>
+        </div>
+    </div>
+
+    <script>
+        const info = {
+            'lovequest': {
+                title: "Love Quest Oyunu",
+                desc: "Bu, sevgiliniz üçün kodlaşdırılan xüsusi bir oyundur. O, oyunda irəlilədikcə sizin ortaq fotolarınızı tapır və sonda sizin gizli mesajınızı oxuyur. Tamamilə mobil uyumludur!",
+                wa: "Salam! Love Quest oyunu haqqında məlumat almaq istəyirəm."
+            },
+            'couplesite': {
+                title: "Premium Sevgili Saytı",
+                desc: "Sevgiliniz üçün tamamilə ona aid bir veb-sayt! İçində sizin seçdiyiniz musiqi, qalereya, tanışlıq sayğacı və ən əsası ona özəl link (məs: gulay.com/elnur). Ən unudulmaz hədiyyə!",
+                wa: "Salam! Sevgili üçün özəl sayt hazırlamaq istəyirəm."
+            },
+            'timeline': {
+                title: "Zaman Tuneli",
+                desc: "Tanış olduğunuz andan bu günə qədər olan ən vacib anları bir 'Zaman Tuneli'ndə birləşdiririk. Aşağı çəkdikcə illər və aylar keçir, xatirələr canlanır.",
+                wa: "Salam! Zaman Tuneli xidməti haqqında maraqlanıram."
+            },
+            'quiz': {
+                title: "Secret Quiz",
+                desc: "Münasibətiniz üçün əyləncəli bir test! Sevgilinize göndərirsiniz, o sizin haqqınızda olan sualları cavablandırır. Sonda nəticələr birbaşa sizə gəlir.",
+                wa: "Salam! Secret Quiz sifarişi üçün yazıram."
+            },
+            'vinyl': {
+                title: "Spotify Vinil Saytı",
+                desc: "Sizin mahnınızın olduğu rəqəmsal bir vinil fırlanır. Üzərində fotonuz və mahnı sözləri animasiya ilə keçir. Romantik bir rəqəmsal təcrübə!",
+                wa: "Salam! Spotify Vinil saytı sifariş vermək istəyirəm."
+            }
+        };
+
+        function showInfo(id) {
+            document.getElementById('m-title').innerText = info[id].title;
+            document.getElementById('m-desc').innerText = info[id].desc;
+            document.getElementById('m-link').href = "https://wa.me/994998461606?text=" + encodeURIComponent(info[id].wa);
+            document.getElementById('modal').style.display = 'flex';
+        }
+
+        function hideInfo() {
+            document.getElementById('modal').style.display = 'none';
+        }
+
+        window.onclick = function(e) {
+            if (e.target == document.getElementById('modal')) hideInfo();
+        }
+    </script>
+</body>
+</html>
