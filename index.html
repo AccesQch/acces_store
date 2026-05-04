@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AccesQCH | Premium Digital Love Gifts</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #ff4d4d;
+            --secondary: #ff85a2;
+            --bg: #0a0a0a;
+            --glass: rgba(255, 255, 255, 0.07);
+        }
+
+        body {
+            background: radial-gradient(circle at center, #1a0505 0%, #050505 100%);
+            color: #fff;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 20px;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Arxa fonda uçan güllər animasiyası */
+        .flower {
+            position: fixed;
+            color: var(--secondary);
+            font-size: 20px;
+            z-index: -1;
+            opacity: 0.3;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            0% { transform: translateY(-10vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 0.5; }
+            90% { opacity: 0.5; }
+            100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+        }
+
+        .header {
+            text-align: center;
+            margin: 40px 0;
+            position: relative;
+        }
+
+        .header h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 38px;
+            letter-spacing: 8px;
+            margin: 0;
+            background: linear-gradient(45deg, #ff4d4d, #ff85a2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 0 10px rgba(255, 77, 77, 0.5));
+        }
+
+        .header p {
+            font-size: 12px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            opacity: 0.7;
+            margin-top: 10px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 480px;
+            display: grid;
+            gap: 20px;
+        }
+
+        .card {
+            background: var(--glass);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 77, 77, 0.2);
+            border-radius: 25px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+        }
+
+        .card:hover {
+            transform: translateY(-5px) scale(1.02);
+            border-color: var(--primary);
+            box-shadow: 0 10px 30px rgba(255, 77, 77, 0.2);
+        }
+
+        .card-icon {
+            font-size: 30px;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-right: 20px;
+        }
+
+        .card-info h3 { margin: 0; font-size: 18px; }
+        .card-info p { margin: 5px 0 0; font-size: 12px; opacity: 0.6; }
+
+        .price-badge {
+            margin-left: auto;
+            text-align: right;
+        }
+
+        .old-price {
+            text-decoration: line-through;
+            font-size: 12px;
+            opacity: 0.5;
+            color: #ff9999;
+        }
+
+        .new-price {
+            display: block;
+            font-weight: bold;
+            color: #00ff88;
+            font-size: 18px;
+            text-shadow: 0 0 10px rgba(0, 255, 136, 0.4);
+        }
+
+        /* Modal Dizayn */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.9);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .modal-content {
+            background: linear-gradient(135deg, #151515 0%, #000 100%);
+            width: 90%;
+            max-width: 400px;
+            padding: 35px;
+            border-radius: 30px;
+            border: 2px solid var(--primary);
+            text-align: center;
+            position: relative;
+        }
+
+        .modal-content h2 { color: var(--primary); font-family: 'Orbitron'; margin-bottom: 15px; }
+        .modal-content p { font-size: 14px; line-height: 1.7; color: #ccc; margin-bottom: 25px; text-align: left; }
+
+        .btn-wa {
+            background: linear-gradient(45deg, #25d366, #128c7e);
+            color: white;
+            text-decoration: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: bold;
+            display: block;
+            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.3);
+            transition: 0.3s;
+        }
+
+        .btn-wa:hover { transform: scale(1.05); }
+
+        .close-btn { position: absolute; top: 15px; right: 20px; font-size: 25px; cursor: pointer; opacity: 0.5; }
+
+        .footer { margin-top: 50px; opacity: 0.3; font-size: 10px; letter-spacing: 2px; }
+
+    </style>
+</head>
+<body>
+
+    <div id="flowers"></div>
+
+    <div class="header">
+        <h1>ACCESQCH</h1>
+        <p>Gələcəyin Mühəndisindən Rəqəmsal Hədiyyələr</p>
+    </div>
+
+    <div class="container">
+        <!-- Love Quest -->
+        <div class="card" onclick="openInfo('lovequest')">
+            <i class="fas fa-gamepad card-icon"></i>
+            <div class="card-info">
+                <h3>Love Quest</h3>
+                <p>Macəra dolu rəqəmsal oyun.</p>
+            </div>
+            <div class="price-badge">
+                <span class="old-price">10 AZN</span>
+                <span class="new-price">7 AZN</span>
+            </div>
+        </div>
+
+        <!-- Sevgili Saytı -->
+        <div class="card" onclick="openInfo('couplesite')">
+            <i class="fas fa-heart card-icon"></i>
+            <div class="card-info">
+                <h3>Premium Sayt</h3>
+                <p>Ad günü, toy və ya təklif üçün.</p>
+            </div>
+            <div class="price-badge">
+                <span class="old-price">15 AZN</span>
+                <span class="new-price">10 AZN</span>
+            </div>
+        </div>
+
+        <!-- Fortune Hearts -->
+        <div class="card" onclick="openInfo('fortune')">
+            <i class="fas fa-star card-icon"></i>
+            <div class="card-info">
+                <h3>Fortune Hearts</h3>
+                <p>Yeni: Sevgi falı və tapşırıqlar.</p>
+            </div>
+            <div class="price-badge">
+                <span class="old-price">8 AZN</span>
+                <span class="new-price">5 AZN</span>
+            </div>
+        </div>
+
+        <!-- Spotify Vinil -->
+        <div class="card" onclick="openInfo('vinyl')">
+            <i class="fas fa-music card-icon"></i>
+            <div class="card-info">
+                <h3>Spotify Vinil</h3>
+                <p>Mahnınızın rəqəmsal plastinkası.</p>
+            </div>
+            <div class="price-badge">
+                <span class="old-price">6 AZN</span>
+                <span class="new-price">3 AZN</span>
+            </div>
+        </div>
+
+        <!-- Secret Quiz -->
+        <div class="card" onclick="openInfo('quiz')">
+            <i class="fas fa-user-secret card-icon"></i>
+            <div class="card-info">
+                <h3>Secret Quiz</h3>
+                <p>Sizi nə qədər tanıyır?</p>
+            </div>
+            <div class="price-badge">
+                <span class="old-price">3 AZN</span>
+                <span class="new-price">1 AZN</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">BY ELNUR ACCESQCH © 2026</div>
+
+    <!-- Modal Box -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeInfo()">&times;</span>
+            <h2 id="m-title">Başlıq</h2>
+            <p id="m-desc">Məlumat...</p>
+            <a href="#" id="m-link" class="btn-wa">İndi Endirimlə Sifariş Et</a>
+        </div>
+    </div>
+
+    <script>
+        // Güllər yaradan kod
+        function createFlowers() {
+            const container = document.getElementById('flowers');
+            const icons = ['🌸', '🌹', '❤️', '✨'];
+            for (let i = 0; i < 20; i++) {
+                let f = document.createElement('div');
+                f.className = 'flower';
+                f.innerText = icons[Math.floor(Math.random() * icons.length)];
+                f.style.left = Math.random() * 100 + 'vw';
+                f.style.animationDuration = (Math.random() * 3 + 4) + 's';
+                f.style.animationDelay = Math.random() * 5 + 's';
+                container.appendChild(f);
+            }
+        }
+        createFlowers();
+
+        const data = {
+            'lovequest': {
+                title: "Love Quest Oyunu",
+                desc: "<b>Nə görəcəksiniz?</b><br>• Sevgiliniz üçün 3 mərhələli labirint oyunu.<br>• Hər səviyyədə sizin seçdiyiniz bir xatirə fotosu açılır.<br>• Sonda 'Mənimlə evlənərsən?', 'Məni bağışla' və ya istədiyiniz böyük bir sürpriz mesaj görünür.<br>• <b>Məqsəd:</b> Əyləncə və sürpriz sonluq!",
+                wa: "Salam! Love Quest oyunu üçün yazıram."
+            },
+            'couplesite': {
+                title: "Premium Sevgili Saytı",
+                desc: "<b>Nə görəcəksiniz?</b><br>• <b>Ad Günü:</b> Geri sayım, tort partlayışı və səsli təbrik.<br>• <b>Barışıq:</b> Emosional musiqi və sizin üzr məktubunuz.<br>• <b>Evlilik/Sevgili Təklifi:</b> 'Hə/Yox' düymələri (Yox-u klikləmək olmur!).<br>• <b>Xüsusiyyət:</b> Tamamilə ona aid özəl bir link!",
+                wa: "Salam! Özəl sayt sifarişi üçün (Ad günü/Barışıq/Təklif) yazıram."
+            },
+            'fortune': {
+                title: "Fortune Hearts",
+                desc: "<b>Nə görəcəksiniz?</b><br>• Ekranda 5 dənə qapalı ürək.<br>• Sevgiliniz birini seçir: İçindən ya romantik bir fal, ya da sizin edəcəyiniz bir tapşırıq çıxır (məs: 'Mənə dondurma al').<br>• Hər dəfə fərqli nəticə verən əyləncəli və təkrar oynanıla bilən oyun!",
+                wa: "Salam! Fortune Hearts oyunu sifariş etmək istəyirəm."
+            },
+            'vinyl': {
+                title: "Spotify Vinil",
+                desc: "<b>Nə görəcəksiniz?</b><br>• Sizin mahnınızın olduğu rəqəmsal val (plastinka).<br>• Val fırlandıqca kənarda sizin fotonuz görünür.<br>• Mahnı sözləri sinxron şəkildə ekranda axır.<br>• Romantik axşamlar üçün mükəmməl vizual hədiyyə.",
+                wa: "Salam! Spotify Vinil sifarişi üçün yazıram."
+            },
+            'quiz': {
+                title: "Secret Quiz",
+                desc: "<b>Nə görəcəksiniz?</b><br>• Sizin haqqınızda 10 özəl sual.<br>• Cavabları bitirəndə ona 'Sən məni 80% tanıyırsan' kimi nəticə göstərir.<br>• Bütün cavablar gizli şəkildə sizin WhatsApp-ınıza gəlir!",
+                wa: "Salam! Secret Quiz sifariş vermək istəyirəm."
+            }
+        };
+
+        function openInfo(id) {
+            document.getElementById('m-title').innerText = data[id].title;
+            document.getElementById('m-desc').innerHTML = data[id].desc;
+            document.getElementById('m-link').href = "https://wa.me/994998461606?text=" + encodeURIComponent(data[id].wa);
+            document.getElementById('modal').style.display = 'flex';
+        }
+
+        function closeInfo() {
+            document.getElementById('modal').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
